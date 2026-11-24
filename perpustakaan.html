@@ -1,0 +1,349 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Perpustakaan Digital X-G</title>
+
+<style>
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background: #f3f6fb;
+    color: #24344a;
+}
+
+header {
+    background: #24466b;
+    color: white;
+    text-align: center;
+    padding: 28px 15px;
+}
+
+header h1 {
+    font-size: 25px;
+}
+
+nav {
+    background: #365b80;
+    padding: 13px;
+    text-align: center;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 10px;
+}
+
+.container {
+    max-width: 1000px;
+    margin: auto;
+    padding: 20px;
+}
+
+.pencarian {
+    text-align: center;
+    margin: 20px 0;
+}
+
+input, select {
+    width: 90%;
+    max-width: 400px;
+    padding: 12px;
+    margin: 7px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+}
+
+.daftar {
+    display: grid;
+    grid-template-columns:
+    repeat(auto-fit, minmax(220px, 1fr));
+    gap: 15px;
+}
+
+.kartu {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 3px 8px #00000010;
+}
+
+.kartu h3 {
+    color: #24466b;
+}
+
+.kartu p {
+    line-height: 1.6;
+}
+
+.label {
+    display: inline-block;
+    background: #e5efff;
+    color: #24466b;
+    padding: 5px 9px;
+    border-radius: 20px;
+    font-size: 12px;
+}
+
+.kartu a {
+    display: inline-block;
+    background: #3574c8;
+    color: white;
+    text-decoration: none;
+    padding: 10px 13px;
+    border-radius: 7px;
+    margin-top: 5px;
+}
+
+.kartu a:hover {
+    background: #24569b;
+}
+
+#hasil {
+    text-align: center;
+    margin: 15px;
+}
+
+footer {
+    background: #24466b;
+    color: white;
+    text-align: center;
+    padding: 18px;
+    margin-top: 30px;
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>📚 Perpustakaan Digital X-G</h1>
+    <p>Jendela Dunia Melalui Bacaan</p>
+    <p>Temukan, Baca, dan Tambah Wawasan!</p>
+</header>
+
+<nav>
+    <a href="#beranda">Beranda</a>
+    <a href="#koleksi">Koleksi</a>
+    <a href="#tentang">Tentang</a>
+</nav>
+
+<div class="container" id="beranda">
+
+<h2>Selamat Datang di Perpustakaan X-G!</h2>
+
+<p>
+Perpustakaan Digital X-G menyediakan berbagai
+link bacaan digital Bahasa Indonesia dan
+bahasa asing yang dapat diakses untuk menambah
+pengetahuan serta meningkatkan minat membaca.
+</p>
+
+<div class="pencarian" id="koleksi">
+
+<h2>🔎 Cari Bacaan</h2>
+
+<input type="text"
+id="cari"
+placeholder="Cari nama perpustakaan..."
+onkeyup="filterBacaan()">
+
+<br>
+
+<select id="bahasa" onchange="filterBacaan()">
+    <option value="semua">Semua bahasa</option>
+    <option value="indonesia">Bahasa Indonesia</option>
+    <option value="internasional">Internasional</option>
+</select>
+
+</div>
+
+<div class="daftar" id="daftar">
+
+<!-- INDONESIA -->
+
+<div class="kartu" data-bahasa="indonesia">
+<h3>🇮🇩 iPusnas</h3>
+<span class="label">Bahasa Indonesia</span>
+<p>
+Perpustakaan digital nasional yang menyediakan
+berbagai e-book untuk dibaca dan dipinjam.
+</p>
+<a href="https://ipusnas.id/"
+target="_blank" rel="noopener">
+Baca Sekarang ↗
+</a>
+</div>
+
+<div class="kartu" data-bahasa="indonesia">
+<h3>📖 BUDI</h3>
+<span class="label">Bahasa Indonesia</span>
+<p>
+Buku Digital Indonesia berisi beragam bacaan
+digital untuk mendukung kegiatan literasi.
+</p>
+<a href="https://budi.kemendikdasmen.go.id/"
+target="_blank" rel="noopener">
+Baca Sekarang ↗
+</a>
+</div>
+
+<div class="kartu" data-bahasa="indonesia">
+<h3>🎓 SIBI</h3>
+<span class="label">Bahasa Indonesia</span>
+<p>
+Sumber buku pendidikan dan buku nonteks
+yang dapat dibaca serta diunduh.
+</p>
+<a href="https://buku.kemdikbud.go.id/"
+target="_blank" rel="noopener">
+Baca Sekarang ↗
+</a>
+</div>
+
+<div class="kartu" data-bahasa="indonesia">
+<h3>🌱 Let's Read</h3>
+<span class="label">Multibahasa</span>
+<p>
+Kumpulan cerita dari berbagai negara
+yang tersedia dalam beragam bahasa.
+</p>
+<a href="https://www.letsreadasia.org/"
+target="_blank" rel="noopener">
+Baca Sekarang ↗
+</a>
+</div>
+
+<!-- INTERNASIONAL -->
+
+<div class="kartu" data-bahasa="internasional">
+<h3>🌍 Project Gutenberg</h3>
+<span class="label">Bahasa Inggris</span>
+<p>
+Koleksi buku klasik digital gratis
+yang dapat dibaca dan diunduh.
+</p>
+<a href="https://www.gutenberg.org/"
+target="_blank" rel="noopener">
+Read Now ↗
+</a>
+</div>
+
+<div class="kartu" data-bahasa="internasional">
+<h3>📚 Open Library</h3>
+<span class="label">Multibahasa</span>
+<p>
+Katalog buku digital dari berbagai
+negara dan berbagai kategori.
+</p>
+<a href="https://openlibrary.org/"
+target="_blank" rel="noopener">
+Read Now ↗
+</a>
+</div>
+
+<div class="kartu" data-bahasa="internasional">
+<h3>📘 StoryWeaver</h3>
+<span class="label">Multibahasa</span>
+<p>
+Kumpulan cerita digital dengan
+berbagai bahasa dan tingkat membaca.
+</p>
+<a href="https://storyweaver.org.in/"
+target="_blank" rel="noopener">
+Read Now ↗
+</a>
+</div>
+
+<div class="kartu" data-bahasa="internasional">
+<h3>🎓 DOAB</h3>
+<span class="label">Bahasa Inggris</span>
+<p>
+Direktori buku akademik akses terbuka
+dari berbagai bidang ilmu.
+</p>
+<a href="https://www.doabooks.org/"
+target="_blank" rel="noopener">
+Read Now ↗
+</a>
+</div>
+
+</div>
+
+<p id="hasil"></p>
+
+<section id="tentang">
+
+<h2>💡 Tentang Perpustakaan X-G</h2>
+
+<p>
+Website ini dibuat sebagai sarana untuk
+memudahkan siswa kelas X-G mengakses berbagai
+sumber bacaan digital dari Indonesia maupun
+luar negeri. Melalui website ini, siswa dapat
+menambah wawasan, memperoleh informasi,
+dan meningkatkan minat baca.
+</p>
+
+</section>
+
+</div>
+
+<footer>
+<p>© 2026 Perpustakaan Digital X-G</p>
+<p>Literasi untuk Masa Depan ✨</p>
+</footer>
+
+<script>
+
+function filterBacaan() {
+
+    let kata = document.getElementById("cari")
+        .value.toLowerCase();
+
+    let bahasa = document.getElementById("bahasa")
+        .value;
+
+    let kartu = document.getElementsByClassName("kartu");
+
+    let jumlah = 0;
+
+    for (let i = 0; i < kartu.length; i++) {
+
+        let nama = kartu[i]
+            .getElementsByTagName("h3")[0]
+            .innerText.toLowerCase();
+
+        let jenis = kartu[i]
+            .getAttribute("data-bahasa");
+
+        if (
+            nama.includes(kata) &&
+            (bahasa == "semua" || jenis == bahasa)
+        ) {
+
+            kartu[i].style.display = "block";
+            jumlah++;
+
+        } else {
+
+            kartu[i].style.display = "none";
+
+        }
+
+    }
+
+    document.getElementById("hasil").innerText =
+        jumlah + " sumber bacaan ditemukan.";
+
+}
+
+</script>
+
+</body>
+</html>
